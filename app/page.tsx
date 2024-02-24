@@ -32,7 +32,7 @@ const Home = async ({ searchParams }: HomeProps) => {
 								key={listing.id}
 								data={listing}
 							/>
-							<div>{listings.title}</div>
+							<div>{listing.title}</div>
 						</>
 					);
 				})}
