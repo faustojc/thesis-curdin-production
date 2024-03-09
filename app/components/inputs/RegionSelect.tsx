@@ -2,6 +2,7 @@
 
 import useRegions from '@/app/hooks/useRegions';
 import Select from 'react-select';
+import React from "react";
 
 export type RegionSelectValue = {
 	label: string;
@@ -24,7 +25,7 @@ const RegionSelect: React.FC<RegionSelectProps> = ({ value, onChange }) => {
 				isClearable
 				options={getAllRegions()}
 				value={value}
-				onChange={(value) => onChange(value as RegionSelectValue)}
+				onChange={(value) => onChange(value)}
 				formatOptionLabel={(option: any) => (
 					<div className="flex flex-row items-center gap-3">
 						<div>{option.label}</div>

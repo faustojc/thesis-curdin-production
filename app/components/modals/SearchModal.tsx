@@ -27,10 +27,19 @@ const SearchModal = () => {
 	const [floorCount, setFloorCount] = useState(1);
 	const [bathroomCount, setBathroomCount] = useState(1);
 	const [areaRange, setAreaRange] = useState([0, 100]);
-	const [location, setLocation] = useState<RegionSelectValue>();
+	const [location, setLocation] = useState<RegionSelectValue>({
+		label: '',
+		value: ''
+	});
 	const [barangayLocation, setBarangayLocation] =
-		useState<BarangaySelectValue>();
-	const [cityLocation, setCityLocation] = useState<CitySelectValue>();
+		useState<BarangaySelectValue>({
+			label: '',
+			value: ''
+		});
+	const [cityLocation, setCityLocation] = useState<CitySelectValue>({
+		label: '',
+		value: ''
+	});
 	const [area, setArea] = useState(0);
 	const [carport, setCarport] = useState(1);
 	const [yard, setYard] = useState(0);

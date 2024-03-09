@@ -2,6 +2,7 @@
 
 import useCities from '@/app/hooks/useCities';
 import Select from 'react-select';
+import React from "react";
 
 export type CitySelectValue = {
 	label: string;
