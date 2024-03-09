@@ -38,6 +38,3 @@ next-env.d.ts
 #python package
 /venv
 /.venv
-
-# prisma client
-/prisma/generated/*
