@@ -1,6 +1,6 @@
 import prisma from '@/app/libs/prismadb';
 import getEstimatedPrice from './getEstimatedPrice';
-import { Feature } from '../types';
+import {Feature} from '../types';
 
 export interface IListingsParams {
 	userId?: string;
@@ -120,20 +120,14 @@ export default async function getListings(params: IListingsParams) {
 
 		const estimatedPrice: [] = await getEstimatedPrice('Linear', features);
 
-		return listings.map(
-			(listing) => {
-				const price =
-					estimatedPrice instanceof Array
-						? estimatedPrice.shift()
-						: estimatedPrice;
-
-				return {
-					...listing,
-					createdAt: listing.createdAt.toISOString(),
-					estimatedPrice: price,
-				};
+		return listings.map(listing => {
+			// append estimated price with the listing
+			return {
+				...listing,
+				createdAt: listing.createdAt.toISOString(),
+				estimatedPrice: estimatedPrice.shift()
 			}
-		);
+		});
 	} catch (error: any) {
 		throw new Error(error);
 	}

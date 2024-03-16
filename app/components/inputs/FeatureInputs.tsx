@@ -33,7 +33,7 @@ function Forms({
       body: JSON.stringify({ model: selectedModel, features: features }),
     };
 
-    fetch('http://127.0.0.1:8080/api/estimate', requestOptions)
+    fetch('/api/estimate', requestOptions)
       .then((response) => response.json())
       .then((data) => {
         setEstimatedPrice(data.estimated);
@@ -50,8 +50,8 @@ function Forms({
   return (
     <form>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {Object.keys(features).map((feature, index) => (
-          <div key={index}>
+        {Object.keys(features).map((feature) => (
+          <div key={feature}>
             <label
               htmlFor={feature}
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"

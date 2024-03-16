@@ -1,7 +1,7 @@
 # api/estimate.py
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import parse_qs
-from .shared import ElasticNet, LassoRegression, LinearModel, RidgeRegression
+from shared import ElasticNet, LassoRegression, LinearModel, RidgeRegression
 import numpy as np
 import pandas as pd
 import json

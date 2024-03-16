@@ -10,7 +10,7 @@ export default async function getEstimatedPrice(model: ModelType, features: Feat
             body: JSON.stringify({ model: model, features: features }),
         };
 
-        const estimated = fetch('http://127.0.0.1:8080/api/estimate', options)
+        const estimated = fetch('/api/estimate', options)
             .then((response) => response.json())
             .then((data) => data.estimated)
             .catch((error) => console.log(error));
